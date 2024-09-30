@@ -1,0 +1,30 @@
+﻿
+@implements IDialogContentComponent<string>
+
+<FluentDialogHeader Title="Scroll With Tab" ShowDismiss="true" />
+
+<FluentDialogBody>
+    <FluentTabs Height="100%" Width="100%">
+        <FluentTab Label="Intro">
+
+            <h1>Introduction</h1>
+            <p>The "Scroll" tab contains a large document that should cause scrolling
+                but the fluent-tab-panel is oversized so the data and the scroll bar
+                run off the page.
+            </p>
+        </FluentTab>
+        <FluentTab Label="Scroll">
+            <pre>@Content
+            </pre>
+        </FluentTab>
+    </FluentTabs>
+</FluentDialogBody>
+
+
+@code {
+    [CascadingParameter]
+    public FluentDialog? Dialog { get; set; }
+
+    [Parameter]
+    public string Content { get; set; } = string.Empty;
+}
