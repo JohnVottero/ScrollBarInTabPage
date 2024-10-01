@@ -18,3 +18,8 @@ This issue can be fixed by changing Height="100%" to Height="62vh" in TabWithScr
 However, there is a second issue, the horizontal scrollbar is placed at the bottom of the
 content instead of the bottom of the dialog. So, you have to scroll to the bottom in order
 to scroll horizontally.
+
+The horizontal scroll bar issue was reported here:
+https://github.com/microsoft/fluentui-blazor/issues/2743
+
+And, the resolution for that issue is to add Style="display:flex" to the Scroll FluentTab element.
